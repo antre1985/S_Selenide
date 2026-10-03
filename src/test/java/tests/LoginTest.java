@@ -5,7 +5,6 @@ import org.testng.annotations.Test;
 import com.codeborne.selenide.Condition;
 
 public class LoginTest extends BaseTest {
-    pages.LoginPage loginPage = new pages.LoginPage();
 
     @Test
     public void projectIsOpen() {
@@ -16,6 +15,6 @@ public class LoginTest extends BaseTest {
         loginPage.closeSignUpModal();
 
         loginPage.logInWithRegisteredUser();
-        Selenide.$("#nameofuser").shouldBe(Condition.visible);
+        loginPage.verifyUserLoggedIn();
     }
 }

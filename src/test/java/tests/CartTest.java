@@ -9,10 +9,6 @@ public class CartTest extends BaseTest {
  @Test
  public void addProductToCartTest() {
 
-     pages.LoginPage loginPage = new pages.LoginPage();
-     pages.ProductPage productPage = new pages.ProductPage();
-     pages.CartPage cartPage = new pages.CartPage();
-
      loginPage.openPage();
      loginPage.clickOnProduct();
 

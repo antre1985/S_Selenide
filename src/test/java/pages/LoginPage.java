@@ -2,6 +2,7 @@ package pages;
 
 import com.codeborne.selenide.SelenideElement;
 
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
@@ -18,6 +19,7 @@ public class LoginPage {
     final SelenideElement loginUserName = $("#loginusername");
     final SelenideElement loginPassword = $("#loginpassword");
     final SelenideElement loginSubmitBtn = $("[onclick=\"logIn()\"]");
+    final SelenideElement nameOfUser = $("#nameofuser");
 
     public void openPage() {
         open("https://www.demoblaze.com/");
@@ -48,5 +50,9 @@ public class LoginPage {
 
     public void goToCart() {
         cartMenuBtn.click();
+    }
+
+    public void verifyUserLoggedIn() {
+        $("#nameofuser").shouldBe(visible);
     }
 }
